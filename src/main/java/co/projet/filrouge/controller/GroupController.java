@@ -1,5 +1,7 @@
 package co.projet.filrouge.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import co.projet.filrouge.model.Foods;
 import co.projet.filrouge.model.FoodsGroup;
 import co.projet.filrouge.service.FoodsService;
 import co.projet.filrouge.service.GroupService;
@@ -30,5 +33,12 @@ public class GroupController {
 		//System.out.println(resource);
 	    return groupService.saveGroup(r).getId();
 	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	@ResponseBody
+	public List<FoodsGroup> findAll() {
+		return groupService.getAll();
+	}
+ 	
 	
 }
