@@ -45,6 +45,10 @@ public class FoodsGroup {
  		this.name = name;
 	}
 
+	public FoodsGroup(Long id,String name) {
+		this.id = id;
+ 		this.name = name;
+	}
 	
 	//@OneToMany(cascade=CascadeType.ALL)
 	//@JoinColumn(name="group_id")

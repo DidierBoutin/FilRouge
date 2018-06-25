@@ -78,7 +78,17 @@ public class Foods {
 		}
 		 
 		
-		 
+		public Foods(String name, FoodsGroup foodsGroup, float glycIndex, float energy, float carboHydrates,
+				float proteins, float lipids, String comment) {
+ 			this.name = name;
+			this.foodsGroup = foodsGroup;
+			this.glycIndex = glycIndex;
+			this.energy = energy;
+			this.carboHydrates = carboHydrates;
+			this.proteins = proteins;
+			this.lipids = lipids;
+			this.comment = comment;
+		}
 
 		 
 

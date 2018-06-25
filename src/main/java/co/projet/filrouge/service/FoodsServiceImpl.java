@@ -35,5 +35,8 @@ public class FoodsServiceImpl implements FoodsService {
 		  	  return foodsRepository.findByName(name);
 		      }
 	    	   
+	 	public List<Foods> findByNameContaining(String name){
+	 		return foodsRepository.findByNameContaining(name);
+	 	}
 }
 

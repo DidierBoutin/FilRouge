@@ -12,6 +12,6 @@ public interface GroupService {
 	public FoodsGroup saveGroup(FoodsGroup f);
 	public List<FoodsGroup> getAll();
 	public Optional<FoodsGroup> findById(Long id);
- 	public List<FoodsGroup> findByName(String name);
+ 	public FoodsGroup findByName(String name);
 	public void deleteById(Long id);
 }

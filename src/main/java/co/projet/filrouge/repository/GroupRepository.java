@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
   
 public interface GroupRepository extends JpaRepository<FoodsGroup, Long>{
- 	public List<FoodsGroup> findByName(String name);
+ 	public FoodsGroup findByName(String name);
 
 	
 	

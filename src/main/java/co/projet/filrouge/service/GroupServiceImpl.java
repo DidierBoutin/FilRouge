@@ -31,7 +31,7 @@ public class GroupServiceImpl implements GroupService {
   	  groupRepository.deleteById(id);
       }
     
-    public List<FoodsGroup> findByName(String name) {
+    public FoodsGroup findByName(String name) {
 	  return groupRepository.findByName(name);
 	 }
 	

@@ -13,6 +13,8 @@ public interface FoodsService {
 	public List<Foods> getAll();
 	public Optional<Foods> findbyId(Long id);
  	public List<Foods> findByName(String name);
+ 	public List<Foods> findByNameContaining(String name);
+
 	public void deleteById(Long id);
 }
 
