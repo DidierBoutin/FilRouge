@@ -25,6 +25,11 @@ import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "FOODS")
+@NamedQueries({
+	@NamedQuery(name = "Foods.findAll2", query = " SELECT f.foodsGroup.name, f.name FROM Foods f ORDER BY f.name desc ")})
+	
+	 
+
 public class Foods {
 	
 	 
