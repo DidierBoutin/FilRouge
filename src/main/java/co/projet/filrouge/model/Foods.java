@@ -43,8 +43,7 @@ public class Foods {
 		@Column(name = "NAME",nullable=false)
 		private String name;
 		
-  		//@ManyToOne(fetch = FetchType.LAZY)
-  		@ManyToOne
+  		@ManyToOne(fetch = FetchType.LAZY)
 		@JoinColumn(name = "foodsGroup")
 		private FoodsGroup foodsGroup;
 		
