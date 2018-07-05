@@ -1,6 +1,5 @@
 package co.projet.filrouge.model;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -61,6 +60,14 @@ public class FoodsGroup {
 	
 	
 	
+	public Set<Foods> getFoods() {
+		return foods;
+	}
+
+	public void setFoods(Set<Foods> foods) {
+		this.foods = foods;
+	}
+
 	public Long getId() {
 		return id;
 	}
