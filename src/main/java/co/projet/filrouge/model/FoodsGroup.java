@@ -54,7 +54,7 @@ public class FoodsGroup {
 	//@JoinColumn(name="group_id")
 	//private Set<Foods> f;
 	
-	@OneToMany(mappedBy = "foodsGroup", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "foodsGroup", cascade = CascadeType.ALL, orphanRemoval = true) //, fetch = FetchType.LAZY)
     private Set<Foods> foods;
 	
 	
