@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,7 @@ import co.projet.filrouge.service.GroupService;
   
 @Controller
 @RequestMapping("/foods") 
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class FoodsController {
 	@Inject
 	FoodsService foodsService;
@@ -35,17 +37,33 @@ public class FoodsController {
 	    return foodsService.saveFoods(ressource).getId();
 	}
 	
+ 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletee(@PathVariable(value = "id") Long id) {
+        foodsService.deleteById(id);
+    }
 	
  	@RequestMapping(method = RequestMethod.GET)
- 	@CrossOrigin(origins = {"http://localhost:4200"})
 	@ResponseBody
 	public List<Foods> findAll() {
 		return foodsService.getAll();
 	}
  	
-	
+ 	// Recherche par nom de l'aliment
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    @ResponseBody
+        public List<Foods> findByName(@PathVariable(value="name") String name) {
+        System.out.println("name = " + name);
+        return foodsService.findByName(name);
+    }
  
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public void update(@PathVariable(value = "id") Long id, @RequestBody Foods resource) {
+        resource.setId(id);     
+        foodsService.saveFoods(resource).getId();
 
+    }
 
 
 }

@@ -18,6 +18,8 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "FOODSGROUP")
 public class FoodsGroup {
@@ -54,7 +56,8 @@ public class FoodsGroup {
 	//private Set<Foods> f;
 	
 	@OneToMany(mappedBy = "foodsGroup", cascade = CascadeType.ALL, orphanRemoval = true) //, fetch = FetchType.LAZY)
-    private Set<Foods> foods;
+	@JsonIgnore
+	private Set<Foods> foods;
 	
 	
 	
